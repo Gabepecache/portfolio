@@ -4,6 +4,7 @@ $font-family-sans-serif: Ubuntu;
 $navbar-default-link-color: white;
 $border-radius-base: 0px;
 $jumbotron-heading-color: white;
+$input-color: #000000;
 
 @import 'bootstrap';
 
@@ -56,9 +57,14 @@ body, html {
 
 .signin {
 	padding: 5px 5% 20px 5%;
-	margin: -100px 10% 10px 10%;
+	margin: -100px 0 10px 0;
 	background: rgba(00, 00, 00, .4);
 	color: white;
+	min-width: 380px;
+}
+
+input, select, textarea{
+    color: #000000;
 }
 
 .signin .btn {
