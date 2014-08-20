@@ -1,9 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
 $font-family-sans-serif: Ubuntu;
-$body-bg:	white;
-$navbar-default-bg:	#ecf0f1;
-$navbar-default-link-color: #8e44ad;
+$navbar-default-link-color: white;
 $border-radius-base: 0px;
 $jumbotron-heading-color: white;
 
@@ -35,10 +33,50 @@ body, html {
 }
 
 .navbar {
-	border-bottom: solid black;
-	padding: 0px 100px 0px 100px;
-	max-height: 50px;
+	border-bottom: 3px solid black;
+	border-top: 3px solid black;
+	padding: 0px 60px 0px 60px;
+	max-height: 60px;
 }
+
+.panel {
+	margin: 50px 10% 50px 10%;
+}
+
+
+.collapsing, .in {
+	border: 2px solid black;
+	margin: 4px;
+	background: rgba(00, 00, 00, .7);
+}
+
+.alert {
+	color: white;
+}
+
+.signin {
+	padding: 5px 5% 20px 5%;
+	margin: -100px 10% 10px 10%;
+	background: rgba(00, 00, 00, .4);
+	color: white;
+}
+
+.signin .btn {
+	border-radius: 20px;
+}
+
+.form-group{
+	font-size: 150%;
+}
+
+.navbar .btn {
+	padding: 8px;
+	margin-top: 5px;
+}
+
+
+
+
 
 
 
