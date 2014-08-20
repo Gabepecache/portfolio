@@ -1,8 +1,15 @@
 
 	<div class = "jumbotron center signin bg">
-		<h1>Sign in!</h1>
-		<%= link_to "Login", "#", class: "btn btn-default btn-lg" %>
-		<%= link_to "Sign up", "#", class: "btn btn-primary btn-lg" %> 
+		<% if user_signed_in? %>
+			<h1>Welcome!</h1>
+		<% else %>
+			<p>
+				<h1>Sign in!</h1>
+				<%= link_to "Login", new_user_session_path, class: "btn btn-default btn-lg" %>
+				<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
+			</p>
+		<% end %>
+
 	</div>
 	<h1 class = "center"><strong>Hello!<br><br>My name is Gabe</strong></h1>
 
