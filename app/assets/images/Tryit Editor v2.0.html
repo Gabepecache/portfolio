@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_table_cellspacing -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Tryit Editor v2.0</title>
+<link rel="stylesheet" href="http://www.w3schools.com/stdtry.css">
+<script async="" type="text/javascript" src="./Tryit Editor v2.0_files/gpt.js"></script><script type="text/javascript" async="" src="./Tryit Editor v2.0_files/dc.js"></script><script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-3855518-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script>
+googletag.cmd.push(function() {
+googletag.defineSlot('/16833175/TryitLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1383036313516-0').addService(googletag.pubads());
+googletag.pubads().setTargeting("content","trytags");
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+
+<script type="text/javascript">
+function submitTryit()
+{
+var t=document.getElementById("textareaCode").value;
+t=t.replace(/=/gi,"w3equalsign");
+var pos=t.search(/script/i)
+while (pos>0)
+	{
+	t=t.substring(0,pos) + "w3" + t.substr(pos,3) + "w3" + t.substr(pos+3,3) + "tag" + t.substr(pos+6);
+	pos=t.search(/script/i);
+	}
+
+t=escape(t);document.getElementById("bt").value="1";
+	
+document.getElementById("code").value=t;
+document.getElementById("tryitform").action="tryit_view.asp?x=" + Math.random();
+validateForm();
+document.getElementById("tryitform").submit();
+}
+function validateForm()
+{
+var code=document.getElementById("code").value;
+if (code.length>8000)
+	{
+	document.getElementById("code").value="<h1>Error</h1>";
+	}
+}
+</script>
+
+
+<script>
+function w3showit() {
+  var ifr = document.getElementById("iframeResult");
+  ifr.contentWindow.document.open('text/html','replace');
+  var text = document.getElementById("textareaCode").value;
+  ifr.contentWindow.document.write(text);
+  ifr.contentWindow.document.close();
+}    
+</script>
+<script async="" type="text/javascript" src="./Tryit Editor v2.0_files/pubads_impl_47.js"></script><script type="text/javascript" src="./Tryit Editor v2.0_files/osd.js"></script></head>
+<body>
+
+<div id="ads">
+	<div style="position:relative;width:100%;margin-top:0px;margin-bottom:0px;">
+		<div style="width:974px;height:94px;position:relative;margin:0px;margin-left:auto;
+		margin-right:auto;margin-top:5px;margin-bottom:5px;padding:0px;overflow:hidden;">
+			<!-- TryitLeaderboard -->
+			<div id="div-gpt-ad-1383036313516-0" style="width:970px; height:90px;">
+				<script type="text/javascript">
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1383036313516-0'); });
+				</script>
+			<div id="google_ads_iframe_/16833175/TryitLeaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/16833175/TryitLeaderboard_0" name="google_ads_iframe_/16833175/TryitLeaderboard_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/16833175/TryitLeaderboard_0__hidden__" name="google_ads_iframe_/16833175/TryitLeaderboard_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div>
+			<div style="clear:both"></div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="menu">
+Edit the code.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Submit it to see the result.&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input class="submit" type="button" value="Submit" onclick="submitTryit()">
+</div>
+
+
+<div class="container">
+
+<div class="textareacontainer">
+  <div class="textarea">
+    <div class="headerText">Code:</div>
+    <textarea class="code_input" id="textareaCode" wrap="logical" rows="30" cols="50">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+table,th,td
+{
+border:1px solid black;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;Table without cellspacing:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Month&lt;/th&gt;
+    &lt;th&gt;Savings&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;January&lt;/td&gt;
+    &lt;td&gt;$100&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Table with cellspacing:&lt;/p&gt;
+&lt;table cellspacing="10"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Month&lt;/th&gt;
+    &lt;th&gt;Savings&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;January&lt;/td&gt;
+    &lt;td&gt;$100&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; The cellspacing attribute is not supported in HTML5.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+	<form style="margin:0px;display:none;" action="./Tryit Editor v2.0_files/tryit_view.html" method="post" target="view" id="tryitform" name="tryitform" onsubmit="validateForm();">
+		<input type="hidden" name="code" id="code" value="%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%3Chead%3E%0A%3Cstyle%3E%0Atable%2Cth%2Ctd%0A%7B%0Aborder%3A1px%20solid%20black%3B%0A%7D%0A%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%0A%3Cp%3ETable%20without%20cellspacing%3A%3C/p%3E%0A%3Ctable%3E%0A%20%20%3Ctr%3E%0A%20%20%20%20%3Cth%3EMonth%3C/th%3E%0A%20%20%20%20%3Cth%3ESavings%3C/th%3E%0A%20%20%3C/tr%3E%0A%20%20%3Ctr%3E%0A%20%20%20%20%3Ctd%3EJanuary%3C/td%3E%0A%20%20%20%20%3Ctd%3E%24100%3C/td%3E%0A%20%20%3C/tr%3E%0A%3C/table%3E%0A%0A%3Cp%3ETable%20with%20cellspacing%3A%3C/p%3E%0A%3Ctable%20cellspacingw3equalsign%2210%22%3E%0A%20%20%3Ctr%3E%0A%20%20%20%20%3Cth%3EMonth%3C/th%3E%0A%20%20%20%20%3Cth%3ESavings%3C/th%3E%0A%20%20%3C/tr%3E%0A%20%20%3Ctr%3E%0A%20%20%20%20%3Ctd%3EJanuary%3C/td%3E%0A%20%20%20%20%3Ctd%3E%24100%3C/td%3E%0A%20%20%3C/tr%3E%0A%3C/table%3E%0A%0A%3Cp%3E%3Cb%3ENote%3A%3C/b%3E%20The%20cellspacing%20attribute%20is%20not%20supported%20in%20HTML5.%3C/p%3E%0A%0A%3C/body%3E%0A%3C/html%3E%0A">
+		<input type="hidden" id="bt" name="bt" value="1">
+	</form>
+  </div>
+</div>
+
+<div class="iframecontainer">
+  <div class="iframe">
+  <div class="headerText">Result:</div>
+  <iframe id="iframeResult" class="result_output" frameborder="0" name="view" src="./Tryit Editor v2.0_files/tryit_view.html"></iframe>
+  </div> 
+</div>
+
+</div>
+<script>submitTryit()</script>
+
+<iframe id="google_osd_static_frame_9898461885750" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>
