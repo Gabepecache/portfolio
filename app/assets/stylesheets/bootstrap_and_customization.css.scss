@@ -24,6 +24,7 @@ $input-color: #000000;
 body, html {
 	height: 100%;
 	margin-top: 28px;
+	text-align:center;
 }
 
 .btn {
@@ -39,7 +40,17 @@ body, html {
 }
 
 .panel {
-	margin: 50px 10% 50px 10%;
+	margin-top: 10px;
+	background-color: #ecf0f1;
+	border: 1px solid black;
+
+
+	display: inline-block;
+	max-width: 500%;
+}
+
+.panel-body{
+	border-top: 1px solid black;
 }
 
 
@@ -74,7 +85,7 @@ input, select, textarea{
 }
 
 .form-group{
-	font-size: 150%;
+	font-size: 150%; 
 }
 
 .navbar .btn {

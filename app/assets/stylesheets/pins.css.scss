@@ -9,7 +9,18 @@
 	margin: 5px;
 	width: 214px;
 }
-
 .box img{
 	width: 100%;
+}
+
+.showbox .panel{
+	margin-top: 10px;
+	padding: 5px;
+	background-color:white;
+	text-align: left;
+	max-width: 50%;
+}
+
+.showbox img{
+	max-width: 100%;
 }

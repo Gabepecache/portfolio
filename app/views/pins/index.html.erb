@@ -1,13 +1,12 @@
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
-      <%= image_tag pin.image.url(:medium) %>
+      <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
         <%= pin.description %><br />
         <%= pin.user.email if pin.user %><br />
-        <%= link_to 'Show', pin, class: "btn btn-default" %>
         <% if pin.user == current_user %>
-          <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-primary" %>
           <%= link_to 'Destroy', pin, method: :delete, class: "btn btn-default" %>
         <% end %>
       </div>
