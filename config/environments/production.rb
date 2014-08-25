@@ -84,10 +84,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'http://pinteresting1324.herokuapp.com/', port: 3000 }
 
   #amazon s3 and paperclip
-  config.paperclip_defaults = {
+config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['S3_BUCKET_NAME'],
+    :bucket => ENV['AWS_BUCKET'],
     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
