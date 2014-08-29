@@ -4,6 +4,7 @@
 			<p>
 				<%= @pin.description %><br/>
 			</p>
+			<p><strong><%= @pin.user.name if @pin.user %></strong></p>
 			<% if @pin.user == current_user %>
 				<%= link_to edit_pin_path(@pin), class: "btn btn-primary" do %>
             		<span class="glyphicon glyphicon-edit"></span>
