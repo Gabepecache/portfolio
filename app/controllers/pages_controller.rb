@@ -3,5 +3,7 @@ class PagesController < ApplicationController
   end
 
   def about
+  	@users = User.all
   end
+
 end
