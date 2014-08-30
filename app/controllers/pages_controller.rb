@@ -6,9 +6,12 @@ class PagesController < ApplicationController
   end
 
   def admin
+  	redirect_to :root if !current_user.try(:admin?) || !current_user.try(:king?)
   	@users = User.all.order('email ASC')
   	@up = params[:upgrade]
   	@down = params[:downgrade]
+  	@evo = params[:evolve]
+
   end
 
 end

@@ -1,5 +1,17 @@
 
-     <% if current_user.king == true %>
+     <% if current_user.try(:king?) %>
+     	 <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+	       <p>EVOLVE!</p>
+	       <input type="text" name="evolve" placeholder= "Enter email">
+	       <input type="submit" onClick="history.go(0)"/>
+	     </form>
+
+	      <% @users.each do |user| %>
+		      <% if user.try(:email) == @evo %>
+		      	 <% user.update_attribute :king, true %>
+		      <% end %>
+	      <% end %>
+
 	     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
 	       <p>Change to admin</p>
 	       <input type="text" name="upgrade" placeholder= "Enter email">

@@ -2,14 +2,22 @@
 
 $font-family-sans-serif: Ubuntu;
 $navbar-default-link-color: white;
+$navbar-default-bg: #222222;
 $border-radius-base: 0px;
 $jumbotron-heading-color: white;
 $input-color: #000000;
 
 @import 'bootstrap';
 
-.site {
-	
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+#inside {
+	margin-top: -20px;
+	padding:10px;
+	padding-bottom:200px;   /* Height of the footer element */
 }
 
 .center {
@@ -17,16 +25,14 @@ $input-color: #000000;
 }
 
 .jumbotron{
-	margin-top: -10px;
-	background: image-url("glacier.jpg");
-	border: solid black;
-    background-attachment:fixed;
     height: 700px;
+    background: rgba(00, 00, 00, 0);
 }
 
-
-body{
-	padding-top: 65px; 
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
 	text-align:center;
 }
 
@@ -36,21 +42,11 @@ body{
 	border-color: black;
 }
 
-.navbar {
-	border-bottom: 3px solid black;
-	border-top: 3px solid black;
-	padding: 0px 5px 0px 5px;
-	max-height: 80px;
-}
-
 .panel {
-	margin-top: 10px;
 	background-color: #ecf0f1;
 	border: 1px solid black;
-
-
 	display: inline-block;
-	max-width: 500%;
+
 }
 
 .panel-body{
@@ -66,15 +62,14 @@ body{
 
 .alert {
 	color: white;
+	margin-bottom: 0;
+	max-height: 80px;
 }
 
 input, select, textarea{
     color: #000000;
 }
 
-.signin .btn {
-	padding: 5px;
-}
 
 .btn {
 	padding: 5px;
@@ -93,10 +88,7 @@ input, select, textarea{
 	margin-top: 5px;
 }
 
-.alert {
-	margin-bottom: 0;
-	max-height: 80px;
-}
+
 
 
 
