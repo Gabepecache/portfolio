@@ -1,27 +1,29 @@
 
-     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
-       <p>Change to admin</p>
-       <input type="text" name="upgrade" placeholder= "Enter email">
-       <input type="submit" onClick="history.go(0)"/>
-     </form>
+     <% if current_user.king == true %>
+	     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+	       <p>Change to admin</p>
+	       <input type="text" name="upgrade" placeholder= "Enter email">
+	       <input type="submit" onClick="history.go(0)"/>
+	     </form>
 
-      <% @users.each do |user| %>
-	      <% if user.try(:email) == @up %>
-	      	 <% user.update_attribute :admin, true %>
+	      <% @users.each do |user| %>
+		      <% if user.try(:email) == @up %>
+		      	 <% user.update_attribute :admin, true %>
+		      <% end %>
 	      <% end %>
-      <% end %>
 
-     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
-       <p>Change to user</p>
-       <input type="text" name="downgrade" placeholder= "Enter email">
-       <input type="submit" onClick="history.go(0)"/>
-     </form>
+	     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+	       <p>Change to user</p>
+	       <input type="text" name="downgrade" placeholder= "Enter email">
+	       <input type="submit" onClick="history.go(0)"/>
+	     </form>
 
-      <% @users.each do |user| %>
-	      <% if user.try(:email) == @down %>
-	      	 <% user.update_attribute :admin, false %>
+	      <% @users.each do |user| %>
+		      <% if user.try(:email) == @down %>
+		      	 <% user.update_attribute :admin, false %>
+		      <% end %>
 	      <% end %>
-      <% end %>
+	 <% end %>
 
 
 <div style="text-align:left; padding-left: 20px;">
