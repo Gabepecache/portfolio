@@ -1,3 +1,27 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login {
+	padding: 20px;
+	color: white;
+	float: right;
+	width: 49%;
+	background: rgba(00, 00, 00, .4);
+	border-radius: 5px;
+}
+
+.signup {
+	padding: 10px;
+	color: white;
+	float: left;
+	width: 49%;
+	background: rgba(00, 00, 00, .4);
+	border-radius: 5px;
+}
+
+.home {
+	width: 100%;
+	margin: 0 auto;
+}
+

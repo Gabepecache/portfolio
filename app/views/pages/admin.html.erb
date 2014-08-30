@@ -1,0 +1,52 @@
+
+     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+       <p>Change to admin</p>
+       <input type="text" name="upgrade" placeholder= "Enter email">
+       <input type="submit" onClick="history.go(0)"/>
+     </form>
+
+      <% @users.each do |user| %>
+	      <% if user.try(:email) == @up %>
+	      	 <% user.update_attribute :admin, true %>
+	      <% end %>
+      <% end %>
+
+     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+       <p>Change to user</p>
+       <input type="text" name="downgrade" placeholder= "Enter email">
+       <input type="submit" onClick="history.go(0)"/>
+     </form>
+
+      <% @users.each do |user| %>
+	      <% if user.try(:email) == @down %>
+	      	 <% user.update_attribute :admin, false %>
+	      <% end %>
+      <% end %>
+
+
+<div style="text-align:left; padding-left: 20px;">
+	<h1>Users:</h1><br />
+
+	<% if (current_user.try(:admin?) || current_user.try(:email)  == "gabepecache@gmail.com")  %>
+		<% @users.each do |user| %>
+			<div class="row" style="margin-bottom: -10px;">
+			  <div class="col-md-2">
+			  	  <% if user.king == true %>
+				  	<span class="label label-danger">Im the Fucking King</span>
+				  <% elsif user.admin == false %>
+				  	<span class="label label-default">User</span>
+				  <% else user.admin == true %>
+				  	<span class="label label-primary">Admin</span>
+				  <% end %>
+			  </div>
+			  <div class="col-md-2"><%= user.email %></div>
+			  <div class="col-md-5"><%= user.name %></div>
+			</div><br />
+		<% end %>
+	<% end %>
+</div>
+
+
+
+
+

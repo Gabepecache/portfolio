@@ -3,7 +3,12 @@ class PagesController < ApplicationController
   end
 
   def about
-  	@users = User.all
+  end
+
+  def admin
+  	@users = User.all.order('email ASC')
+  	@up = params[:upgrade]
+  	@down = params[:downgrade]
   end
 
 end
