@@ -5,7 +5,7 @@
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
       <!-- want to open pin image onclick in a modal -->
-        <%= link_to image_tag(pin.image.url(:medium)), "#showModal", :class => "btn", "data-toggle" => "modal" %>
+        <%= link_to image_tag(pin.image.url(:medium)), "#showModal", "data-toggle" => "modal" %>
 
         <!-- modal -->
         <div class="showbox">
