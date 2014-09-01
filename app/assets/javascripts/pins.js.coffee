@@ -7,3 +7,6 @@ $ ->
 		$('#pins').masonry
 			ItemSelector: '.box'
 			isFitWidth: true
+
+			
+

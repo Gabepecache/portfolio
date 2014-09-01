@@ -2,7 +2,6 @@
 
 $font-family-sans-serif: Ubuntu;
 $navbar-default-link-color: white;
-$navbar-default-bg: #222222;
 $border-radius-base: 0px;
 $jumbotron-heading-color: white;
 $input-color: #000000;
@@ -17,7 +16,7 @@ $input-color: #000000;
 #inside {
 	margin-top: -20px;
 	padding:10px;
-	padding-bottom:200px;   /* Height of the footer element */
+	padding-bottom:300px;   /* Height of the footer element */
 }
 
 .center {
@@ -86,6 +85,12 @@ input, select, textarea{
 .navbar .btn {
 	padding: 8px;
 	margin-top: 5px;
+}
+
+.navbar {
+	background: #222222;
+	-webkit-box-shadow: inset 0 0 100px rgba(3,3,3,.5);
+    box-shadow: inset 0 0 100px rgba(3,3,3,.5);
 }
 
 

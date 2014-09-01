@@ -1,5 +1,5 @@
-<div class="showbox">
-	<div class="panel panel-default">
+
+
 			<%= image_tag @pin.image.url %> <br/>
 			<p>
 				<%= @pin.description %><br/>
@@ -11,9 +11,15 @@
             		Edit
           		<% end %>
 			<% end %>
-			<%= link_to 'Back', pins_path, class: "btn btn-primary"  %>
-	</div>
-</div>
+
+<script>
+  $('body').on('hidden.bs.modal', '.modal', function () {
+  $(this).removeData('bs.modal');
+  });
+</script>
+
+      
+
 
 
 <!-- show modal 
