@@ -13,6 +13,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = current_user.pins.build
+    render :layout => false
   end
 
   def edit
