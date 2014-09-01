@@ -1,9 +1,41 @@
 <!-- <%= render 'pages/home' unless user_signed_in?%> -->
 
+<!-- pins -->
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
-      <%= link_to image_tag(pin.image.url(:medium)), pin %>
+      <!-- want to open pin image onclick in a modal -->
+        <%= link_to image_tag(pin.image.url(:medium)), "#showModal", :class => "btn", "data-toggle" => "modal" %>
+
+        <!-- modal -->
+        <div class="showbox">
+        <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              </div>
+
+              <div class="modal-body">
+                <%= image_tag pin.image.url %>
+              </div>
+
+              <div class="modal-footer" style="text-align: center;">
+                <%= pin.description %><br/>
+                <p><strong><%= pin.user.name if pin.user %></strong></p>
+                <% if pin.user == current_user %>
+                  <%= link_to edit_pin_path(pin), class: "btn btn-primary" do %>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit
+                  <% end %>
+                <% end %>
+                <%= link_to 'Back', pins_path, class: "btn btn-primary"  %>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
       <div class="panel-body">
         <%= pin.description %><br />
         <%= pin.user.name if pin.user %><br />
@@ -22,7 +54,31 @@
   <% end %>
 </div>
 
+<!-- pages -->
 <div class="center">
   <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
