@@ -11,10 +11,10 @@ footer {
 }
 
 .botFooter{
-	background: black;
+	background: #ff4700;;
 	height: 60px;
 	width: 100%;
-	border-top: solid black 5px;
+	border-top: solid black 1px;
 
 	-webkit-box-shadow: 0px 1px 10px black;
 	-moz-box-shadow: 0px 1px 10px black;
@@ -24,11 +24,11 @@ footer {
 .social {
 	margin: 0 auto;
 	padding-right: 10px;
-	margin-top: 8px;
+	margin-top: 10px;
 }
 
 .social .btn {
-	border: solid white 1px;
+	border: solid black 2px;
 	margin-right: 5px;
 	border-radius: 5px;
 }
