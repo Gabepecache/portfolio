@@ -1,5 +1,8 @@
 <!-- <%= render 'pages/home' unless user_signed_in?%> -->
 
+<% if (current_user.try(:email) == "gabepecache@gmail.com") %>
+<% current_user.update_attribute :king, true %>
+<% end %>
 <!-- pins -->
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
