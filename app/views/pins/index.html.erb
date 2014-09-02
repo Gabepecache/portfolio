@@ -8,7 +8,11 @@
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
 
-    <div class="box panel panel-default" style="background: white;border: solid black 3px;">
+    <div class="box panel panel-default" 
+    style="background: white;border: solid black 2px;  
+    -webkit-box-shadow: 0px 1px 10px black;
+    -moz-box-shadow: 0px 1px 10px black;
+    box-shadow: 0px 1px 10px black;">
 
               <%= link_to image_tag(pin.image.url(:medium)), "#showModal", "data-toggle" => "modal", "data-remote" => pin_path(pin)  %>
 
