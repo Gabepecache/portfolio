@@ -81,7 +81,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
     #required for heroku
-  config.action_mailer.default_url_options = { host: 'http://pinteresting1324.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'http://gabe-rails.herokuapp.com/', port: 3000 }
 
   #amazon s3 and paperclip
 config.paperclip_defaults = {
