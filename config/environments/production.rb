@@ -82,8 +82,6 @@ Rails.application.configure do
 
 
     #required for heroku
-  config.action_mailer.raise_delivery_errors = true 
-  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'http://gabe-rails.herokuapp.com/'}
 
   #amazon s3 and paperclip
