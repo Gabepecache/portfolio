@@ -9,6 +9,10 @@ $navbar-default-link-hover-color: #d35400;
 
 @import 'bootstrap';
 
+#error_explanation{
+	text-align: left;
+}
+
 #wrapper {
 	min-height:100%;
 	position:relative;
@@ -91,7 +95,7 @@ input, select, textarea{
 }
 .navbar {
 	background: #222222;
-	padding: 0 30px 0 230px;
+	padding: 0 30px 0 100px;
 	-webkit-box-shadow: 0px 1px 10px black;
 	-moz-box-shadow: 0px 1px 10px black;
 	box-shadow: 0px 1px 10px black;

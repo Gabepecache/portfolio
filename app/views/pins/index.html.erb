@@ -2,6 +2,7 @@
 
 <% if (current_user.try(:email) == "gabepecache@gmail.com") %>
 <% current_user.update_attribute :king, true %>
+
 <% end %>
 <!-- pins -->
 <div id="pins" class="transitions-enabled">
@@ -14,17 +15,17 @@
       <div class="panel-body">
         <%= pin.description %><br />
         <%= pin.user.name if pin.user %><br />
-        <% if (pin.user == current_user) or current_user.try(:admin?) or current_user.try(:king?) %>
-          <%= link_to edit_pin_path(pin), class: "btn btn-primary" do %>
-            <span class="glyphicon glyphicon-edit"></span>
-            Edit
-          <% end %>
+
+        <% if ((pin.user == current_user) or current_user.try(:king?)) && current_user != nil %>
+
+          <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>Edit'), "#showModal", "data-toggle" => "modal", "data-remote" => edit_pin_path(pin), class: "btn btn-primary"  %>
           <%= link_to pin, method: :delete, class: "btn btn-default" do %>
             <span class="glyphicon glyphicon-trash"></span>
             Remove
           <% end %>
         <% end %>
       </div>
+
     </div>
   <% end %>
 </div>

@@ -32,11 +32,16 @@
 
           <% if user_signed_in? %>
 <!-- NEW_PIN -->
+          <% if (current_user.try(:admin?) || current_user.try(:king))  %>
           <li><%= link_to raw('<span class="glyphicon glyphicon-plus"></span> New Pin'), "#showModal", "data-toggle" => "modal", "data-remote" => new_pin_path %></li>
+          <% end %>
 <!-- ACCOUNT SETTINGS -->
             <li><%= link_to "Account settings", "#editModal", "data-toggle" => "modal" %></li>
 <!-- LOGOUT -->
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+
+            <li> <h4 style="margin-top: 13px;"><span class="label label-primary"><%= current_user.name %></span></h4></li>
+
           <% else %>
 
 <!-- LOGIN -->
@@ -94,22 +99,22 @@
         <%= devise_error_messages! %>
 
         <div class="form-group"><%= f.label :name %><br>
-        <%= f.text_field :name, autofocus: true, class: "form-control" %></div>
+        <%= f.text_field :name, autofocus: true, class: "form-control", :value => current_user.try(:name) %></div>
 
         <div class="form-group"><%= f.label :email %><br>
-        <%= f.email_field :email, autofocus: true, class: "form-control" %></div>
+        <%= f.email_field :email, autofocus: true, class: "form-control", :value => current_user.try(:email) %></div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <div class="form-group"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br>
+        <div class="form-group">New&nbsp;<%= f.label :password %> <br>
           <%= f.password_field :password, autocomplete: "off", class: "form-control" %></div>
 
-        <div class="form-group"><%= f.label :password_confirmation %><br>
+        <div class="form-group">New&nbsp;<%= f.label :password_confirmation %><br>
           <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %></div>
 
-        <div class="form-group"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br>
+        <div class="form-group"><%= f.label :current_password %> <br>
           <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %></div>
 
         <div class="form-group"><%= f.submit "Update", class: "btn btn-primary" %></div>

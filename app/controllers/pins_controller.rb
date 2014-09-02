@@ -17,6 +17,7 @@ class PinsController < ApplicationController
   end
 
   def edit
+    render :layout => false
   end
 
   def create
@@ -55,6 +56,9 @@ class PinsController < ApplicationController
 
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
+      if (current_user.try(:king) == true)
+        @pin = Pin.find(params[:id])
+      end
       redirect_to pins_path, notice: 'Not Authorized' if @pin.nil?
     end
 

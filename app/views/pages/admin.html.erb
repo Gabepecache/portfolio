@@ -9,6 +9,7 @@
 	      <% @users.each do |user| %>
 		      <% if user.try(:email) == @evo %>
 		      	 <% user.update_attribute :king, true %>
+		      	 <% user.update_attribute :admin, false %>
 		      <% end %>
 	      <% end %>
 
@@ -21,6 +22,7 @@
 	      <% @users.each do |user| %>
 		      <% if user.try(:email) == @up %>
 		      	 <% user.update_attribute :admin, true %>
+		      	 <% user.update_attribute :king, false %>
 		      <% end %>
 	      <% end %>
 
@@ -33,6 +35,7 @@
 	      <% @users.each do |user| %>
 		      <% if user.try(:email) == @down %>
 		      	 <% user.update_attribute :admin, false %>
+		      	 <% user.update_attribute :king, false %>
 		      <% end %>
 	      <% end %>
 	 <% end %>
@@ -40,8 +43,6 @@
 
 <div style="text-align:left; padding-left: 20px;">
 	<h1>Users:</h1><br />
-
-	<% if (current_user.try(:admin?) || current_user.try(:email)  == "gabepecache@gmail.com")  %>
 		<% @users.each do |user| %>
 			<div class="row" style="margin-bottom: -10px;">
 			  <div class="col-md-2">
@@ -57,7 +58,6 @@
 			  <div class="col-md-5"><%= user.name %></div>
 			</div><br />
 		<% end %>
-	<% end %>
 </div>
 
 
