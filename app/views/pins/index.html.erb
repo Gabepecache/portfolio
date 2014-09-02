@@ -7,27 +7,30 @@
 <!-- pins -->
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
-    <div class="box panel panel-default">
-      <!-- want to open pin image onclick in a modal -->
-        <%= link_to image_tag(pin.image.url(:medium)), "#showModal", "data-toggle" => "modal", "data-remote" => pin_path(pin)  %>
+
+    <div class="box panel panel-default" style="background: white;border: solid black 3px;">
+
+              <%= link_to image_tag(pin.image.url(:medium)), "#showModal", "data-toggle" => "modal", "data-remote" => pin_path(pin)  %>
 
 
-      <div class="panel-body">
-        <%= pin.description %><br />
-        <%= pin.user.name if pin.user %><br />
-
-        <% if ((pin.user == current_user) or current_user.try(:king?)) && current_user != nil %>
-
-          <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>Edit'), "#showModal", "data-toggle" => "modal", "data-remote" => edit_pin_path(pin), class: "btn btn-primary"  %>
-          <%= link_to pin, method: :delete, class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-trash"></span>
-            Remove
-          <% end %>
-        <% end %>
-      </div>
+              <div class="panel-body" style="padding: 5px;">
+                <%= pin.description %><br />
+                <%= pin.user.name if pin.user %><br />
+              </div>
+              <div class="panel-footer" style="padding:0;">
+                    <% if ((pin.user == current_user) or current_user.try(:king?)) && current_user != nil %>
+                      <%= link_to raw('<span class="glyphicon glyphicon-edit"></span>Edit'), "#showModal", "data-toggle" => "modal", "data-remote" => edit_pin_path(pin), class: "btn btn-primary", 
+                      "style"=> "width:50%;float:left;border:solid black 0px;"  %>
+                      <%= link_to pin, method: :delete, class: "btn btn-default", "style"=> "width:50%;border:solid black 0px;" do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                        Remove
+                      <% end %>
+                    <% end %>
+              </div>  
 
     </div>
   <% end %>
+
 </div>
 
 <!-- pages -->
