@@ -17,6 +17,9 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'twitter-bootstrap-rails-cdn'
+gem 'contact_us', '~> 0.5.4'
+gem 'formtastic'
+gem 'formtastic-bootstrap'
 
 group :development, :test do
 	gem 'sqlite3'

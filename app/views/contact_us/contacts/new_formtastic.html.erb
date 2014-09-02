@@ -1,0 +1,19 @@
+
+	<h2>Contact Me</h2>
+
+
+	<%= semantic_form_for @contact, :url => contacts_path do |f| %>
+
+		  <%= f.input :name, :label => t('.name'), placeholder: "Enter name" if ContactUs.require_name %>
+		  <%= f.input :email, :label => t('.email'), placeholder: "Enter email" %>
+		  <%= f.input :subject, :label => t('.subject'), placeholder: "Enter subject" if ContactUs.require_subject %>
+		  <%= f.input :message, :as => :text, :label => t('.message'), placeholder: "Enter message" %>
+		  <%= f.action :submit, :label => t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %>
+
+	<% end %>
+
+
+
+
+
+
