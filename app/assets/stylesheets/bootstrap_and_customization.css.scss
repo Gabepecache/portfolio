@@ -9,6 +9,12 @@ $navbar-default-link-hover-color: #d35400;
 
 @import 'bootstrap';
 
+.jumbotron {
+	border: solid black 5px;
+	padding: 0;
+	margin: 0;
+}
+
 #error_explanation{
 	text-align: left;
 }
@@ -26,11 +32,6 @@ $navbar-default-link-hover-color: #d35400;
 
 .center {
 	text-align: center;
-}
-
-.jumbotron{
-    height: 700px;
-    background: rgba(00, 00, 00, 0);
 }
 
 html, body {
