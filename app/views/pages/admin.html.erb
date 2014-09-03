@@ -41,9 +41,9 @@
 		 <% end %><br />
 </div>
 
-<div class="table-responsive" style="text-align:left;width:50%;float:left;display: inline-block;background: white;">
+<div class="table-responsive">
 		<h3>Users:<br /></h3>
-		<table class="table" style="width:100%;background: white;">
+		<table class="table">
 		<% @users.each do |user| %>
 				<tr>
 				  <td>
@@ -63,8 +63,8 @@
 		</table>
 </div>
 
-<div class="jumbotron" style="text-align:left; width:50%; display: inline-block; background: white; padding:40px 5% 0 5%;margin-bottom:50px;">
-	<div style="display:inline-block;padding: 5px;">
+<div class="types">
+	<div class="typeblock">
 	  	<span class="label label-danger">Im the Fucking King</span><br />
 	    Create:&nbsp; <strong>yes</strong><br />
 	    Edit:&nbsp; <strong>any</strong><br />
@@ -73,7 +73,7 @@
 	    promote:&nbsp; <strong>any</strong><br />
 	    demote:&nbsp; <strong>any</strong> <br />
 	</div>
-	<div style="display:inline-block;padding: 5px;">
+	<div class="typeblock">
 	  	<span class="label label-primary">Admin</span><br />
 	    Create:&nbsp; <strong>yes</strong><br />
 	    Edit:&nbsp; <strong>own</strong><br />
@@ -82,7 +82,7 @@
 	    promote:&nbsp; <strong>none</strong><br />
 	    demote:&nbsp; <strong>none</strong><br />
 	</div>
-	<div style="display:inline-block;padding: 5px;">
+	<div class="typeblock">
 	  	<span class="label label-default">User</span><br />
 	    Create:&nbsp; <strong>no</strong><br />
 	    Edit:&nbsp; <strong>no</strong><br />
