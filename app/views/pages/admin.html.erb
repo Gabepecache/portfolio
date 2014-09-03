@@ -1,10 +1,9 @@
-
-
+<div class="seperator"> 
 	     <% if current_user.try(:king?) %>
-	     	 <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+	     	 <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
 		       <p>EVOLVE!</p>
-		       <input type="text" name="evolve" placeholder= "Enter email">
-		       <input type="submit" onClick="history.go(0)"/>
+		       <input type="text" name="evolve" placeholder= "Enter email" class= "form-control">
+		       <input type="submit" onClick="history.go(0)" class= "btn btn-danger" />
 		     </form>
 
 		      <% @users.each do |user| %>
@@ -14,10 +13,10 @@
 			      <% end %>
 		      <% end %>
 
-		     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+		     <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
 		       <p>Change to admin</p>
-		       <input type="text" name="upgrade" placeholder= "Enter email">
-		       <input type="submit" onClick="history.go(0)"/>
+		       <input type="text" name="upgrade" placeholder= "Enter email" class= "form-control">
+		       <input type="submit" onClick="history.go(0)" class= "btn btn-primary"/>
 		     </form>
 
 		      <% @users.each do |user| %>
@@ -27,10 +26,10 @@
 			      <% end %>
 		      <% end %>
 
-		     <form action = "/admin" style="display: inline-block; padding-left: 20px;">
+		     <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
 		       <p>Change to user</p>
-		       <input type="text" name="downgrade" placeholder= "Enter email">
-		       <input type="submit" onClick="history.go(0)"/>
+		       <input type="text" name="downgrade" placeholder= "Enter email" class= "form-control">
+		       <input type="submit" onClick="history.go(0)" class= "btn btn-default"/>
 		     </form>
 
 		      <% @users.each do |user| %>
@@ -39,27 +38,64 @@
 			      	 <% user.update_attribute :king, false %>
 			      <% end %>
 		      <% end %>
-		 <% end %>
+		 <% end %><br />
+</div>
 
+<div class="table-responsive" style="text-align:left;width:50%;float:left;display: inline-block;background: white;">
+		<h3>Users:<br /></h3>
+		<table class="table" style="width:100%;background: white;">
+		<% @users.each do |user| %>
+				<tr>
+				  <td>
+			  	  <% if user.king == true %>
+				  	<span class="label label-danger">Im the Fucking King</span>
+				  <% elsif user.admin == false %>
+				  	<span class="label label-default">User</span>
+				  <% else user.admin == true %>
+				  	<span class="label label-primary">Admin</span>
+				  <% end %>
+				  </td>
+				  <td><%= user.email %></td>
+				  <td><%= user.name %></td>
+				</tr>
+			
+		<% end %>
+		</table>
+</div>
 
-	<div style="text-align:left; padding-left: 20px;">
-		<h1>Users:</h1><br />
-			<% @users.each do |user| %>
-				<div class="row" style="margin-bottom: -10px;">
-				  <div class="col-md-2">
-				  	  <% if user.king == true %>
-					  	<span class="label label-danger">Im the Fucking King</span>
-					  <% elsif user.admin == false %>
-					  	<span class="label label-default">User</span>
-					  <% else user.admin == true %>
-					  	<span class="label label-primary">Admin</span>
-					  <% end %>
-				  </div>
-				  <div class="col-md-2"><%= user.email %></div>
-				  <div class="col-md-5"><%= user.name %></div>
-				</div><br />
-			<% end %>
+<div class="jumbotron" style="text-align:left; width:50%; display: inline-block; background: white; padding:40px 5% 0 5%;margin-bottom:50px;">
+	<div style="display:inline-block;padding: 5px;">
+	  	<span class="label label-danger">Im the Fucking King</span><br />
+	    Create:&nbsp; <strong>yes</strong><br />
+	    Edit:&nbsp; <strong>any</strong><br />
+	    Destroy:&nbsp; <strong>any</strong><br />
+	    Show:&nbsp; <strong>any</strong><br />
+	    promote:&nbsp; <strong>any</strong><br />
+	    demote:&nbsp; <strong>any</strong> <br />
 	</div>
+	<div style="display:inline-block;padding: 5px;">
+	  	<span class="label label-primary">Admin</span><br />
+	    Create:&nbsp; <strong>yes</strong><br />
+	    Edit:&nbsp; <strong>own</strong><br />
+	    Destroy:&nbsp; <strong>own</strong><br />
+	    Show:&nbsp; <strong>any</strong><br />
+	    promote:&nbsp; <strong>none</strong><br />
+	    demote:&nbsp; <strong>none</strong><br />
+	</div>
+	<div style="display:inline-block;padding: 5px;">
+	  	<span class="label label-default">User</span><br />
+	    Create:&nbsp; <strong>no</strong><br />
+	    Edit:&nbsp; <strong>no</strong><br />
+	    Destroy:&nbsp; <strong>no</strong><br />
+	    Show:&nbsp; <strong>any</strong><br />
+	    promote:&nbsp; <strong>none</strong><br />
+	    demote:&nbsp; <strong>none</strong><br />
+	</div>
+</div>
+
+
+
+
 
 
 

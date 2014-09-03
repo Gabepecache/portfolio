@@ -1,12 +1,12 @@
  <div class="seperator"> 
-  <div class="signup ">
-    <h2><%= t('.contact_me') %></h2>
+  <div class="myform ">
+    <h2>Lets Talk</h2>
     <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
 
-      <div class="form-group">
+      <div class="form-group" style="width:50%;float:left;">
       <% if ContactUs.require_name %>
         <div class='string required' id='contact_us_contact_name_input'>
-          <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.label :name, (t('.name') + content_tag(:abbr, '', :class => 'required')).html_safe %>
           <% if f.object.errors[:name].present? %>
             <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
           <% end %>
@@ -15,9 +15,9 @@
       <% end %>
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="width:50%;float:left;">
       <div class='string required' id='contact_us_contact_email_input'>
-        <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+        <%= f.label :email, (t('.email') + content_tag(:abbr, '', :class => 'required')).html_safe %>
         <% if f.object.errors[:email].present? %>
           <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
         <% end %>
@@ -28,7 +28,7 @@
       <div class="form-group">
       <% if ContactUs.require_subject %>
         <div class='string required' id='contact_us_contact_subject_input'>
-          <%= f.label :subject, (t('.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.label :subject, (t('.subject') + content_tag(:abbr, '', :class => 'required')).html_safe %>
           <% if f.object.errors[:subject].present? %>
             <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
           <% end %>
@@ -39,7 +39,7 @@
 
       <div class="form-group">
       <div class='text required' id='contact_us_contact_message_input'>
-        <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+        <%= f.label :message, (t('.message') + content_tag(:abbr, '', :class => 'required')).html_safe %>
         <% if f.object.errors[:message].present? %>
           <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
         <% end %>

@@ -10,9 +10,9 @@ $navbar-default-link-hover-color: #d35400;
 @import 'bootstrap';
 
 .jumbotron {
-	border: solid black 5px;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 50px;
 }
 
 #error_explanation{
@@ -50,10 +50,14 @@ html, body {
 }
 
 .panel {
-	background-color: #ecf0f1;
+	background-color: white;
 	border: 1px solid black;
 	display: inline-block;
 
+}
+
+.panel-heading{
+	background-color: white;
 }
 
 .panel-body{
