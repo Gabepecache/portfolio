@@ -11,6 +11,8 @@ class PagesController < ApplicationController
   	@up = params[:upgrade]
   	@down = params[:downgrade]
   	@evo = params[:evolve]
+    @remove = params[:remove]
+
 
   end
 

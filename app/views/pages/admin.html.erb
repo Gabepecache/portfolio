@@ -38,6 +38,19 @@
 			      	 <% user.update_attribute :king, false %>
 			      <% end %>
 		      <% end %>
+
+		      <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
+		       <p>Remove user</p>
+		       <input type="text" name="remove" placeholder= "Enter email" class= "form-control">
+		       <input type="submit" onClick="history.go(0)" class= "btn btn-warning"/>
+		     </form>
+
+			 <% @users.each do |user| %>
+		      <% if user.try(:email) == @remove %>
+				<% user.destroy %>
+		      <% end %>
+		     <% end %>
+
 		 <% end %><br />
 </div>
 
