@@ -39,40 +39,32 @@
 			      <% end %>
 		      <% end %>
 
-		      <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
-		       <p>Remove user</p>
-		       <input type="text" name="remove" placeholder= "Enter email" class= "form-control">
-		       <input type="submit" onClick="history.go(0)" class= "btn btn-warning"/>
-		     </form>
-
-			 <% @users.each do |user| %>
-		      <% if user.try(:email) == @remove %>
-				<% user.destroy %>
-		      <% end %>
-		     <% end %>
-
 		 <% end %><br />
 </div>
 
 <div class="table-responsive">
 		<h3>Users:<br /></h3>
 		<table class="table">
-		<% @users.each do |user| %>
-				<tr>
-				  <td>
-			  	  <% if user.king == true %>
-				  	<span class="label label-danger">Im the Fucking King</span>
-				  <% elsif user.admin == false %>
-				  	<span class="label label-default">User</span>
-				  <% else user.admin == true %>
-				  	<span class="label label-primary">Admin</span>
-				  <% end %>
-				  </td>
-				  <td><%= user.email %></td>
-				  <td><%= user.name %></td>
-				</tr>
-			
-		<% end %>
+			<% @users.each do |user| %>
+					<tr>
+					  <td>
+				  	  <% if user.king == true %>
+					  	<span class="label label-danger">Im the Fucking King</span>
+					  <% elsif user.admin == false %>
+					  	<span class="label label-default">User</span>
+					  <% else user.admin == true %>
+					  	<span class="label label-primary">Admin</span>
+					  <% end %>
+					  </td>
+					  <td><%= user.email %></td>
+					  <td><%= user.name %></td>
+					  <td>
+					  	<% if user.email != current_user.try(:email) %>
+					  		<%= link_to user, method: :delete do %>Remove<% end %>
+					  	<% end %>
+					  </td>
+					</tr>
+			<% end %>
 		</table>
 </div>
 
