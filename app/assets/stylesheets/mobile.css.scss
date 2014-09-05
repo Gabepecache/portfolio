@@ -2,20 +2,23 @@
 
 	.seperator {
 		margin: 0 auto;
-		padding:30px 0 30px 0;
-		margin: 30px 0 30px 0;
+		padding-top: 30px;
+		margin-top: 30px;
 		-webkit-border-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.09) 10%, rgba(0,0,0,0.09) 90%, rgba(0,0,0,0)) 100% 0;
+		padding-bottom: 30px;
+		margin-bottom: 30px;
 		border-width: 1px 0;
 	}
 
 	.myform {
 		margin: 0px -130px 0 -130px;
-		padding: 0 0 0 0;
+		padding: 0;
 	}
 
 	.changer {
 		width: 100%;
-		display: block;
+		margin: 0;
+		padding:0;
 	}
 
 }
