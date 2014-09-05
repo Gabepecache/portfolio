@@ -1,6 +1,6 @@
 <div class="seperator"> 
 	     <% if current_user.try(:king?) %>
-	     	 <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
+	     	 <form action = "/admin" class="form-group changer">
 		       <p>EVOLVE!</p>
 		       <input type="text" name="evolve" placeholder= "Enter email" class= "form-control">
 		       <input type="submit" onClick="history.go(0)" class= "btn btn-danger" />
@@ -13,7 +13,7 @@
 			      <% end %>
 		      <% end %>
 
-		     <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
+		     <form action = "/admin" class="form-group changer">
 		       <p>Change to admin</p>
 		       <input type="text" name="upgrade" placeholder= "Enter email" class= "form-control">
 		       <input type="submit" onClick="history.go(0)" class= "btn btn-primary"/>
@@ -26,7 +26,7 @@
 			      <% end %>
 		      <% end %>
 
-		     <form action = "/admin" style="display: inline-block; padding-left: 20px;" class="form-group">
+		     <form action = "/admin" class="form-group changer">
 		       <p>Change to user</p>
 		       <input type="text" name="downgrade" placeholder= "Enter email" class= "form-control">
 		       <input type="submit" onClick="history.go(0)" class= "btn btn-default"/>
