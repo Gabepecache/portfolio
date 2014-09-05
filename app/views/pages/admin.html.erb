@@ -59,7 +59,7 @@
 					  <td><%= user.email %></td>
 					  <td><%= user.name %></td>
 					  <td>
-					  	<% if user.email != current_user.try(:email) %>
+					  	<% if (user.email != current_user.try(:email)) && (current_user.try(:king?)) %>
 					  		<%= link_to user, method: :delete do %>Remove<% end %>
 					  	<% end %>
 					  </td>
