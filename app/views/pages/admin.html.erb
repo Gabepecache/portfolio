@@ -1,4 +1,5 @@
 <div class="seperator"> 
+	<div class="myform"> 
 	     <% if current_user.try(:king?) %>
 	     	 <form action = "/admin" class="form-group changer">
 		       <p>EVOLVE!</p>
@@ -40,6 +41,7 @@
 		      <% end %>
 
 		 <% end %><br />
+	</div>
 </div>
 
 <div class="table-responsive">
